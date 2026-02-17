@@ -33,7 +33,7 @@ case "$ARCH_MAX-$VGCONF_OS" in
       AC_MSG_RESULT([no])
       AC_MSG_ERROR([A compiler with fmaintrin.h is required for --enable-verrou-fma ])
   ]) ;;
-  arm64-linux)
+  arm64-linux|aarch64-linux)
   AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
   #include "arm_neon.h"
   #include <stdlib.h>
@@ -94,7 +94,7 @@ case "$ARCH_MAX-$VGCONF_OS" in
       AC_MSG_RESULT([no])
       AC_MSG_ERROR([A compiler with sqrt intrinsics is required for --enable-verrou-sqrt ])
   ]);;
-    arm64-linux)
+    arm64-linux|aarch64-linux)
   AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
   #include "arm_neon.h"
   #include <stdlib.h>
@@ -148,7 +148,7 @@ case "$ARCH_MAX-$VGCONF_OS" in
       AC_MSG_RESULT([no])
       AC_MSG_ERROR([A compiler with quadmath.h is required for --enable-verrou-quadmath ])
   ]) ;;
-  arm64-linux)
+  arm64-linux|aarch64-linux)
      AC_MSG_RESULT([no])
      vg_cv_verrou_quadmath=no
   ;;
